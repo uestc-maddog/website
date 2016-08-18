@@ -1,0 +1,118 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  .am-header-inner {
+      margin-top:-10px;
+    position: relative;
+    z-index: 2;
+
+    .mainNav {
+      height: 80px;
+      border-bottom: 1px #eeeeee solid;
+      background-color: rgba(255,255,255,.9);
+
+      .laymid {
+        width: 1200px;
+        margin: 0 auto;
+
+        .alipay-logo {
+          display: block;
+          width: 114px;
+          position: relative;
+          left: 80px;
+          top: 20px;
+          float: left;
+          height: 40px;
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-image: url(https://t.alipayobjects.com/images/T1HHFgXXVeXXXXXXXX.png);
+        }
+
+        .mainMenu {
+          height: 80px;
+          margin-left: 360px;
+
+          .channel {
+            float: left;
+            height: 80px;
+            line-height: 80px;
+            position: relative;
+
+            .channel-a{
+              text-decoration: none;
+              color: #333;
+              font-size: 16px;
+              display: block;
+              padding: 0 30px;
+              &:hover {
+                color: #00bbee;
+              }
+            }
+          }
+          .on {
+            .channel-a{
+              color: #00bbee;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.body {
+  .services {
+      width: 100%;
+      min-height: 480px;
+      transform: scale(1,1);
+      -webkit-transform: scale(1,1);
+      animation:scal 10s ease infinite alternate ;
+      -webkit-animation:scal 10s ease infinite alternate ;
+  }
+  .iframeClass {
+    width: 800px;
+    height: 450px;
+  }
+  .body-content{
+      margin: auto;
+      position: absolute;
+      top:20%;
+      left: 0;
+      right:0;
+      bottom: 0;
+      width: 1000px;
+      height: 800px;
+      .topClass{
+          padding: 0 20%;
+          text-align: center;
+      }
+      .middle{
+          display: flex;
+
+          .leftClass{
+              flex: 1;
+          }
+          .middleClass{
+              padding: 10px;
+              flex: 4;
+              .video-js{
+                  width: 800px;
+                  height:450px;
+              }
+          }
+          .rightClass{
+               flex: 1;
+               text-align: right;
+          }
+      }
+
+      .bottomClass{
+          padding: 0 20%;
+          text-align: center;
+      }
+  }
+}
