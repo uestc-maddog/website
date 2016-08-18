@@ -1,0 +1,32 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "lingjuan.guan",
+  "license": "ISC",
+  "dependencies": {
+    "babel-loader": "*",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "*",
+    "bootstrap-css": "^3.0.0",
+    "css-loader": "*",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jquery": "3.1.0",
+    "jsx-loader": "*",
+    "node-sass": "^3.7.0",
+    "sass-loader": "^3.2.0",
+    "scss-loader": "*",
+    "style-loader": "*",
+    "vue": "^1.0.26",
+    "vue-hot-reload-api": "*",
+    "vue-strap": "^1.0.11",
+    "vueify": "*",
+    "webpack": "^1.13.1"
+  }
+}
