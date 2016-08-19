@@ -56,9 +56,8 @@
 	__webpack_require__(81);
 	var carousel = __webpack_require__(82).carousel;
 	var slider = __webpack_require__(82).slider;
-	var videojs = __webpack_require__(84);
+	var videojs = __webpack_require__(83);
 	var HEIGHT = window.screen.height-80;
-	console.log(carousel);
 	var vueVm = new Vue({
 	    el: '#content',
 	    components: {
@@ -66,9 +65,11 @@
 	        'slider':slider
 	    },
 	    data:{
+	        isChinese: true,
 	        interval:1000,
 	        currentPage:0,
 	        currentHeight:HEIGHT,
+	        titleListChina:['服务','产品','支持','关于'],
 	        titleList:['Servers','Product','Support','About'],
 	        imgList: pageData.imgList
 	    },
@@ -76,7 +77,13 @@
 	        choseTitle: function (index){
 	            this.currentPage = index+1;
 	            fsvs.slideToIndex(this.currentPage);
+	        },
+	        changeLanguage: function (value){
+	          this.isChinese = value;
 	        }
+	    },
+	    compiled: function(){
+	      // $jq("#defaultData").empty().hide();
 	    }
 	});
 	var begin = {
@@ -85,7 +92,6 @@
 	    },
 	    first: function (){
 	        var len = vueVm.titleList.length+1;
-	        console.log( vueVm);
 	            vueVm.$children[0].isAnimating = false;
 	        for (var i = 1;i<len;i++) {
 	            vueVm.$children[i].isAnimating = true;
@@ -126,12 +132,18 @@
 	            chaptersButton : false,
 	            liveDisplay:false,
 	            subtitlesButton:false,
-	            volumeMenuButton:false
+	            volumeMenuButton:true
 	      }
 	    }).ready(function(){
-	        var myPlayer = this;
-	        myPlayer.play();
-	        myPlayer.volume(0);
+
+	      var myPlayer = this;
+	      myPlayer.play();
+
+	        myPlayer.on('error',function (e) {
+	          myPlayer.error(null);
+	          myPlayer.reset();
+	        });
+
 	    });
 	});
 
@@ -1976,150 +1988,130 @@
 	    imgList:[
 	        [{
 	            "styleObject":{
-	                height:HEIGHT+'px',
-	                width:'100%',
-	                "background-image": "url('../../img/Home-Slogan.JPG')",
+	                "height":HEIGHT+'px',
+	                "width":'100%',
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-Slogan.JPG')",
 	                "background-size":"100% 100%",
 	                "min-width": "80%",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
 	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
-	                "middle":{
-	                    "isVideo":'video',
-	                    "srcVideo":"../video/test1.mp4"
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
+	                "isVideo":'video',
+	                "picVideo": 'http://maddog-static.oss-cn-qingdao.aliyuncs.com/videoImg.jpeg',
+	                "srcVideo":"../video/test1.mp4"
 	            }
 	        },{
 	            "styleObject":{
 	                height:HEIGHT+'px',
 	                width:'100%',
-	                "background-image": "url('../../img/Home-activity.JPG')",
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-activity.JPG')",
 	                "background-size":"100% 100%",
 	                "min-width": "80%",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
 	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-	                    }
-	                },
-	                "middle":{
-	                    "isPpt":'ppt',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
+	              "isPpt":'ppt',
+	              "srcPpt":"http://slides.com/guanlingjuan/fds/fullscreen"
 	            }
 	        }],
 	        [{
 	            "styleObject":{
 	                height:HEIGHT+'px',
 	                width:'100%',
-	                "background-image": "url('../../img/Services-Embedded-Development.JPG')",
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-Embedded-Development.JPG')",
 	                "background-size":"100% 100%",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
+	            "left":{
+	              "characte":"左边的字(汉字)",
+	              "characteEnglish":"Englist Left",
+	              "locate":{
+	                  "top":"300px",
+	                  "left":"300px",
+	              }
+	            },
+	            "right":{
+	              "characte":"右边的字(汉字)",
+	              "characteEnglish":"Englist Right",
+	              "locate":{
+	                  "top":"300px",
+	                  "right":"300px",
+	              }
 	            },
 	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
-	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
+	              "isFont":'font',
+	              "characte":"中间的字hiahiahiahia",
+	              "middle":{
+	                  'font-size':'16px',
+	                  'color':'#ffffff'
+	              }
+	            }
+	        },
+	        {
+	            "styleObject":{
+	                height:HEIGHT+'px',
+	                width:'100%',
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-Product-Design.jpg')",
+	                "background-size":"100% 100%",
+	                "-ms-interpolation-mode": "bicubic"
 	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
+	            "middle":{
+	              "isFont":'font',
+	              "characte":"中间的字hiahiahiahia",
+	              "middle":{
+	                  'font-size':'16px',
+	                  "color":"#ffffff"
+	              }
+	            }
+	        },{
+	            "styleObject":{
+	                height:HEIGHT+'px',
+	                width:'100%',
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-RF-Design.jpg')",
+	                "background-size":"100% 100%",
+	                "-ms-interpolation-mode": "bicubic"
+	            },
 
+	            "middle":{
+	              "isFont":'font',
+	              "characte":"中间的字hiahiahiahia",
+	              "middle":{
+	                  'font-size':'16px',
+	                  "color":"#ffffff"
+	              }
+	            }
+	        }],
+	        [{
+	            "styleObject":{
+	                height:HEIGHT+'px',
+	                width:'100%',
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-Blood-glucose.jpg')",
+	                "background-size":"100% 100%",
+	                "-ms-interpolation-mode": "bicubic"
+	            },
+
+	            "middle":{
+	              "isFont":'font',
+	              "characte":"中间的字hiahiahiahia",
+	              "middle":{
+	                  'font-size':'16px',
+	                  "color":"#ffffff"
+	              }
+	            }
+	        },{
+	            "styleObject":{
+	                height:HEIGHT+'px',
+	                width:'100%',
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-HVAC.JPG')",
+	                "background-size":"100% 100%",
+	                "-ms-interpolation-mode": "bicubic"
+	            },
+	            "middle":{
+	                "isFont":'font',
+	                "characte":"中间的字hiahiahiahia",
+	                "middle":{
+	                    'font-size':'16px',
+	                    "color":"#ffffff"
 	                }
 	            }
 	        },
@@ -2127,100 +2119,16 @@
 	            "styleObject":{
 	                height:HEIGHT+'px',
 	                width:'100%',
-	                "background-image": "url('../../img/Services-Product-Design.jpg')",
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-More-to-Be-Continued.jpg')",
 	                "background-size":"100% 100%",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
 	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
+	                "isFont":'font',
+	                "characte":"中间的字hiahiahiahia",
 	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
 	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            }
-	        },{
-	            "styleObject":{
-	                height:HEIGHT+'px',
-	                width:'100%',
-	                "background-image": "url('../../img/Services-RF-Design.jpg')",
-	                "background-size":"100% 100%",
-	                "-ms-interpolation-mode": "bicubic"
-	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
-	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
-	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
+	                    "color":"#ffffff"
 	                }
 	            }
 	        }],
@@ -2228,151 +2136,16 @@
 	            "styleObject":{
 	                height:HEIGHT+'px',
 	                width:'100%',
-	                "background-image": "url('../../img/Product-Blood-glucose.jpg')",
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Support.JPG')",
 	                "background-size":"100% 100%",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
 	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
+	                "isFont":'font',
+	                "characte":"中间的字hiahiahiahia",
 	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
 	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            }
-	        },{
-	            "styleObject":{
-	                height:HEIGHT+'px',
-	                width:'100%',
-	                "background-image": "url('../../img/Product-HVAC.jpg')",
-	                "background-size":"100% 100%",
-	                "-ms-interpolation-mode": "bicubic"
-	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
-	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
-	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            }
-	        },
-	        {
-	            "styleObject":{
-	                height:HEIGHT+'px',
-	                width:'100%',
-	                "background-image": "url('../../img/Product-More-to-Be-Continued.jpg')",
-	                "background-size":"100% 100%",
-	                "-ms-interpolation-mode": "bicubic"
-	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
-	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
-	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
+	                    "color":"#ffffff"
 	                }
 	            }
 	        }],
@@ -2380,102 +2153,17 @@
 	            "styleObject":{
 	                height:HEIGHT+'px',
 	                width:'100%',
-	                "background-image": "url('../../img/Support.jpg')",
-	                "background-size":"100% 100%",
-	                "-ms-interpolation-mode": "bicubic"
-	            },
-	            "top":{
-	                "characte":"这里是上面汉字",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
-	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
-	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            }
-	        }],
-	        [{
-	            "styleObject":{
-	                height:HEIGHT+'px',
-	                width:'100%',
-	                "background-image": "url('../../img/About.jpg')",
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/About.jpg')",
 	                "background-size":"100% 100%",
 	                "min-width": "1000px",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
-	            "top":{
-	                "characte":"",
-	                "top":{
-	                    'font-size':'16px',
-	                    'color':'#666666'
-
-	                }
-	            },
 	            "middle":{
-	                "left":{
-	                    "characte":"这里是左面汉字",
-	                    "left":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                },
+	                "isFont":'font',
+	                "characte":"中间的字hiahiahiahia",
 	                "middle":{
-	                    "isFont":'font',
-	                    "characte":"中间的字hiahiahiahia",
-	                    "middle":{
-	                        'font-size':'16px',
-	                        'color':'#333333'
-	                    }
-	                },
-	                "right":{
-	                    "characte":"这里是you面汉字",
-	                    "right":{
-	                        'font-size':'16px',
-	                        'color':'#666666'
-
-	                    }
-	                }
-	            },
-	            "bottom":{
-	                "characte":"这里是xia面汉字",
-	                "bottom":{
 	                    'font-size':'16px',
-	                    'color':'#666666'
-
+	                    "color":"#ffffff"
 	                }
 	            }
 	        }]
@@ -29483,8 +29171,7 @@
 	//# sourceMappingURL=vue-strap.js.map
 
 /***/ },
-/* 83 */,
-/* 84 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var require;var require;/* WEBPACK VAR INJECTION */(function(global) {/**
