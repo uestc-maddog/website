@@ -50,43 +50,41 @@
           .header .am-header-inner .mainNav .laymid .mainMenu .on .channel-a {
             color: #00bbee; }
 
-.body .services {
-  width: 100%;
-  min-height: 480px;
-  transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
-  animation: scal 10s ease infinite alternate;
-  -webkit-animation: scal 10s ease infinite alternate; }
-
-.body .iframeClass {
-  width: 800px;
-  height: 450px; }
-
-.body .videoClass {
-  margin: auto; }
-
-.body .floatLocate {
-  position: absolute;
-  color: #ffffff; }
-
-.body .body-content {
-  margin: auto;
-  position: absolute;
-  margin-top: 17%;
-  left: 0;
-  right: 0;
-  width: 1000px;
-  height: 800px; }
-  .body .body-content .topClass {
-    padding: 0 20%;
-    text-align: center; }
-  .body .body-content .middle {
-    text-align: center; }
-    .body .body-content .middle .middleClass {
-      padding: 10px; }
-      .body .body-content .middle .middleClass .video-js {
-        width: 800px;
-        height: 450px; }
-  .body .body-content .bottomClass {
-    padding: 0 20%;
-    text-align: center; }
+.body {
+  font-size: 18pt; }
+  .body .services {
+    width: 100%;
+    min-height: 480px;
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    animation: scal 10s ease infinite alternate;
+    -webkit-animation: scal 10s ease infinite alternate; }
+  .body .iframeClass {
+    width: 800px;
+    height: 450px; }
+  .body .videoClass {
+    margin: auto; }
+  .body .floatLocate {
+    position: absolute;
+    color: #ffffff; }
+  .body .body-content {
+    margin: auto;
+    position: absolute;
+    margin-top: 17%;
+    left: 0;
+    right: 0;
+    width: 1000px;
+    height: 800px; }
+    .body .body-content .topClass {
+      padding: 0 20%;
+      text-align: center; }
+    .body .body-content .middle {
+      text-align: center; }
+      .body .body-content .middle .middleClass {
+        padding: 10px; }
+        .body .body-content .middle .middleClass .video-js {
+          width: 800px;
+          height: 450px; }
+    .body .body-content .bottomClass {
+      padding: 0 20%;
+      text-align: center; }
