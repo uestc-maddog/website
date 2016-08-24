@@ -2011,7 +2011,7 @@
 	            },
 	            "middle":{
 	              "isPpt":'ppt',
-	              "srcPpt":"http://slides.com/guanlingjuan/fds/fullscreen"
+	              "srcPpt":"http://slides.com/maddog-ppt/deck-2/fullscreen"
 	            }
 	        }],
 	        [{
@@ -2027,9 +2027,11 @@
 	              "characte":"我们提供嵌入式软硬件设计，快速原型设计，工业控制系统应用设计等服务，在每一步设计中都带着新的想法去超越。",
 	              "characteEnglish":"We offer rapid proto-typing and proto-type testing for all applications and Software development for embedded industrial control systems and applications With long experience in designing we  assist our customers in product design right from the start, bringing fresh ideas to every step in the design process and beyond, all the way towards manufacturing.",
 	              "middle":{
+	                  "position":"absolute",
 	                  "width":"500px",
 	                  "text-align":'left',
-	                  "margin": 'auto',
+	                  "right":"20px",
+	                  "top":"28%",
 	                  'color':'#ffffff'
 	              }
 	            }
@@ -2045,9 +2047,9 @@
 	              "characte":"嵌入式开发是MadDog工作室的优势。我们致力于技术，客户服务，打造最适合您需求的产品。",
 	              "characteEnglish":"Embedded development is a major foothold of Mad Dog Studios. We are committed to technology, customer service, to create a product that best suits your needs.",
 	              "locate":{
-	                "width": "400px",
-	                "top":"300px",
-	                "left":"20px"
+	                "width": "500px",
+	                "top":"28%",
+	                "left":"62%"
 	              }
 	            }
 	        },{
@@ -2062,9 +2064,9 @@
 	              "characteEnglish":"RF design is one of our strengths when it comes to making durable and reliable test environment for laboratories and manufacturing centers. We assist customers following their requirements while developing ways to achieving their goals in the design.",
 	              "characte":"RF设计是我们的优势之一，我们在开发设计过程中按照他们的需求来完成产品的设计。",
 	              "locate":{
-	                "width": "400px",
-	                "top":"300px",
-	                "right":"60px"
+	                "width": "50%",
+	                "top":"60%",
+	                "right":"15%"
 	              }
 	            }
 	        }],
@@ -2072,7 +2074,7 @@
 	            "styleObject":{
 	                height:HEIGHT+'px',
 	                width:'100%',
-	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-Blood-glucose.jpg')",
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-HVAC.JPG')",
 	                "background-size":"100% 100%",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
@@ -2081,15 +2083,15 @@
 	              "characteEnglish":"HVAC system can control the air temperature and humidity in your place and maintain high air quality. It is convenient to you and maintenance workers to quickly understand the status of HVAC and timely correction and warning.",
 	              "locate":{
 	                "width": "400px",
-	                "top":"300px",
-	                "right":"70px"
+	                "top":"50%",
+	                "right":"40%"
 	              }
 	            }
 	        },{
 	            "styleObject":{
 	                height:HEIGHT+'px',
 	                width:'100%',
-	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-HVAC.JPG')",
+	                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-Blood-glucose.jpg')",
 	                "background-size":"100% 100%",
 	                "-ms-interpolation-mode": "bicubic"
 	            },
@@ -2099,7 +2101,7 @@
 	              "locate":{
 	                "width": "420px",
 	                "top":"200px",
-	                "left":"50%",
+	                "right":"18%",
 	                "margin-left":"-210px"
 	              }
 	            }
@@ -2125,7 +2127,7 @@
 	              "isFont":'font',
 	              "characte":"我们有经验丰富的售后服务人员，确保您可以在第一时间获得支持，我们有能力提供现场支持，返厂维修和在线服务，确保您获得高质量服务。",
 	              "middle":{
-	                  "width":"500px",
+	                  "width":"700px",
 	                  "text-align":'left',
 	                  "margin-left": "400px",
 	                  'color':'#ffffff'
@@ -2136,9 +2138,11 @@
 	              "characte":"地址:中国成都市郫县天润路777号学府海棠1-2-1802 电话:028-87841139",
 	              "characteEnglish":"No.1-2-1802, Xuefuhaitang, Tianrun RD No.777, Pixian, Chengdu   Tel:028-87841139",
 	              "locate":{
-	                "width": "335px",
+	                "font-style":"oblique",
+	                "width": "1000px",
 	                "bottom":"100px",
-	                "right":"0"
+	                "right":"20%",
+	                "bottom":"35px"
 	              }
 	            }
 	        }],
