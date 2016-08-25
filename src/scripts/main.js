@@ -143,7 +143,7 @@
 	    }).ready(function(){
 
 	      var myPlayer = this;
-	      myPlayer.play();
+	      // myPlayer.play();
 
 	        myPlayer.on('error',function (e) {
 	          myPlayer.error(null);
