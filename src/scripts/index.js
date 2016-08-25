@@ -12,6 +12,7 @@ var carousel = require('vue-strap').carousel;
 var slider = require('vue-strap').slider;
 var videojs = require('./common/video.js');
 var HEIGHT = window.screen.height-80;
+var videoPlay;
 var vueVm = new Vue({
     el: '#content',
     components: {
@@ -66,6 +67,11 @@ var fsvs = $jq.fn.fsvs({
     afterSlide : function(){},
     beforeSlide : function(index){
         vueVm.currentPage = index;
+        if (index === 0) {
+          videoPlay && videoPlay.play();
+        } else {
+          videoPlay && videoPlay.pause();
+        }
         begin.slide(index);
     },
     endSlide : function(){},
@@ -79,7 +85,7 @@ var fsvs = $jq.fn.fsvs({
     });
 $jq(document).ready( function() {
     begin.init();
-    videojs("example_video1", {
+    videoPlay = videojs("example_video1", {
         autoplay:false,
         controlBar: {
             captionsButton: false,

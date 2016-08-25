@@ -6,8 +6,8 @@ var pageData = {
                 "height":HEIGHT+'px',
                 "width":'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-Slogan.JPG')",
-                "background-size":"100% 100%",
-                "min-width": "80%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             },
             "middle":{
@@ -20,8 +20,8 @@ var pageData = {
                 height:HEIGHT+'px',
                 width:'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-activity.JPG')",
-                "background-size":"100% 100%",
-                "min-width": "80%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             },
             "middle":{
@@ -34,7 +34,8 @@ var pageData = {
                 height:HEIGHT+'px',
                 width:'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-Embedded-Development.JPG')",
-                "background-size":"100% 100%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             },
             "middle":{
@@ -55,7 +56,8 @@ var pageData = {
                 height:HEIGHT+'px',
                 width:'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-Product-Design.jpg')",
-                "background-size":"100% 100%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             },
             "left":{
@@ -72,7 +74,8 @@ var pageData = {
                 "height":HEIGHT+'px',
                 "width":'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-RF-Design.jpg')",
-                "background-size":"100% 100%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             },
             "right": {
@@ -90,7 +93,8 @@ var pageData = {
                 height:HEIGHT+'px',
                 width:'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-HVAC.JPG')",
-                "background-size":"100% 100%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             },
             "right":{
@@ -107,7 +111,8 @@ var pageData = {
                 height:HEIGHT+'px',
                 width:'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-Blood-glucose.jpg')",
-                "background-size":"100% 100%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             },
             "left":{
@@ -126,7 +131,8 @@ var pageData = {
                 height:HEIGHT+'px',
                 width:'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-More-to-Be-Continued.jpg')",
-                "background-size":"100% 100%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
             }
         }],
@@ -166,7 +172,8 @@ var pageData = {
                 height:HEIGHT+'px',
                 width:'100%',
                 "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/About.jpg')",
-                "background-size":"100% 100%",
+                "background-size":"cover",
+                "min-width": "40%",
                 "min-width": "1000px",
                 "-ms-interpolation-mode": "bicubic"
             },

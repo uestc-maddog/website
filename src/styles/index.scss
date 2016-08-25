@@ -71,6 +71,9 @@
 }
 .body {
   font-size:18pt;
+  .carousel-indicators{
+    bottom: 5%;
+  }
   .services {
       width: 100%;
       min-height: 480px;
