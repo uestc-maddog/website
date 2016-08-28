@@ -45,9 +45,10 @@
             .channel-a{
               text-decoration: none;
               color: #333;
-              font-size: 16px;
+              font-size: 22px;
+              font-weight: 600;
               display: block;
-              padding: 0 30px;
+              padding: 0 40px;
               &:hover {
                 color: #00bbee;
               }
@@ -56,7 +57,7 @@
           .language {
             font-size: 12px;
             position: absolute;
-            left:75%;
+            left:85%;
             cursor: pointer;
           }
           .on {
@@ -121,4 +122,8 @@
           text-align: center;
       }
   }
+}
+
+body{
+  font-family: Tahoma, Helvetica, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif !important;;
 }
