@@ -12,6 +12,7 @@
 - 命令行执行ssh work@www.maddog.tech   密码123
 - 进入服务器后cd website
 - 执行git pull
+- 出现一个编辑页面执行ctrl x,即可关闭,如果不关闭则关闭当前命令行工具重新连接服务器进入项目根目录执行git reset --hard，再git pull.
 - 执行重启命令sudo supervisorctl restart http
 
 ---------------------
