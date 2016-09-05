@@ -2029,7 +2029,7 @@
 	            },
 	            "middle":{
 	              "isPpt":'ppt',
-	              "srcPpt":"http://slides.com/maddog-ppt/deck-2/fullscreen"
+	              "srcPpt":"https://slides.com/maddog-ppt/deck-2/fullscreen"
 	            }
 	        }],
 	        [{
@@ -24291,7 +24291,6 @@
 		          }
 		        };
 		        document.addEventListener('click', blurEvent, false);
-		        document.addEventListener('touchstart', blurEvent, false);
 		      }
 		      return this;
 		    }
@@ -28638,7 +28637,7 @@
 		
 		
 		// module
-		exports.push([module.id, ".form-group[_v-652ad7b9] {\r\n  position: relative;\r\n}\r\nlabel~.close[_v-652ad7b9] {\r\n    top: 25px;\r\n}\r\n.close[_v-652ad7b9] {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  z-index: 2;\r\n  display: block;\r\n  width: 34px;\r\n  height: 34px;\r\n  line-height: 34px;\r\n  text-align: center;\r\n}\r\n.has-feedback.has-success button.close[_v-652ad7b9],\r\n.has-feedback.has-error button.close[_v-652ad7b9] {\r\n  right:20px;\r\n}", ""]);
+		exports.push([module.id, ".form-group[_v-652ad7b9] {\r\n  position: relative;\r\n}\r\nlabel~button.close[_v-652ad7b9] {\r\n    top: 25px;\r\n}\r\nbutton.close[_v-652ad7b9] {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  z-index: 2;\r\n  display: block;\r\n  width: 34px;\r\n  height: 34px;\r\n  line-height: 34px;\r\n  text-align: center;\r\n}\r\n.has-feedback.has-success button.close[_v-652ad7b9],\r\n.has-feedback.has-error button.close[_v-652ad7b9] {\r\n  right:20px;\r\n}", ""]);
 		
 		// exports
 
@@ -28673,7 +28672,7 @@
 		
 		// <template>
 		
-		//   <div class="form-group" @click="focus()" :class="{'has-feedback':icon,'has-error':valid===false,'has-success':valid===true,validate:!noValidate}">
+		//   <div class="form-group" @click="focus()" :class="{'has-feedback':icon,'has-error':valid===false,'has-success':valid===true}">
 		
 		//     <label v-if="label" class="control-label">{{label}}</label>
 		
@@ -28719,8 +28718,6 @@
 		
 		//           :placeholder="placeholder"
 		
-		//           @keyup.enter="enterSubmit&&submit()"
-		
 		//         />
 		
 		//         <slot name="after"></slot>
@@ -28743,13 +28740,15 @@
 		
 		//         :placeholder="placeholder"
 		
-		//         @keyup.enter="enterSubmit&&submit()"
-		
 		//       />
 		
 		//     </template>
 		
-		//     <span v-if="clearButton && value" class="close" @click="value = ''">&times;</span>
+		//     <button v-if="clearButton && value" type="button" class="close" @click="value = ''">
+		
+		//       <span>&times;</span>
+		
+		//     </button>
 		
 		//     <span v-if="icon&&valid!==null" class="glyphicon glyphicon-{{valid?'ok':'remove'}} form-control-feedback" aria-hidden="true"></span>
 		
@@ -28835,7 +28834,6 @@
 		      coerce: _coerceBoolean2.default,
 		      default: false
 		    },
-		    onfocus: null,
 		    pattern: null,
 		    placeholder: {
 		      type: String,
@@ -28930,16 +28928,6 @@
 		        }, (0, _coerceNumber2.default)(this.validationDelay, 250));
 		      }
 		    },
-		    submit: function submit() {
-		      if (this.$els.input.form) {
-		        var invalids = (0, _NodeList2.default)('.form-group.validate:not(.has-success)', this.$els.input.form);
-		        if (invalids.length) {
-		          invalids.find('input,textarea,select')[0].focus();
-		        } else {
-		          this.$els.input.form.submit();
-		        }
-		      }
-		    },
 		    validate: function validate() {
 		      var value = (this.value || '').trim();
 		      if (!value) {
@@ -28972,8 +28960,6 @@
 		      if (!_this2.noValidate) {
 		        _this2.valid = _this2.validate();
 		      }
-		    }).on('focus', function (e) {
-		      if (_this2.onfocus instanceof Function) _this2.onfocus.call(_this2, e);
 		    });
 		  },
 		  beforeDestroy: function beforeDestroy() {
@@ -28991,13 +28977,13 @@
 		
 		// }
 		
-		// label~.close {
+		// label~button.close {
 		
 		//     top: 25px;
 		
 		// }
 		
-		// .close {
+		// button.close {
 		
 		//   position: absolute;
 		
@@ -29033,7 +29019,7 @@
 	/* 143 */
 	/***/ function(module, exports) {
 
-		module.exports = "<div class=\"form-group\" @click=\"focus()\" :class=\"{'has-feedback':icon,'has-error':valid===false,'has-success':valid===true,validate:!noValidate}\" _v-652ad7b9=\"\">\n    <label v-if=\"label\" class=\"control-label\" _v-652ad7b9=\"\">{{label}}</label>\n    <textarea v-if=\"type=='textarea'\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :cols=\"cols\" :rows=\"rows\" :name=\"name\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" _v-652ad7b9=\"\"></textarea>\n    <template v-else=\"\" _v-652ad7b9=\"\">\n      <div v-if=\"slots.before||slots.after\" class=\"input-group\" _v-652ad7b9=\"\">\n        <slot name=\"before\" _v-652ad7b9=\"\"></slot>\n        <input class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :type=\"type\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @keyup.enter=\"enterSubmit&amp;&amp;submit()\" _v-652ad7b9=\"\">\n        <slot name=\"after\" _v-652ad7b9=\"\"></slot>\n      </div>\n      <input v-else=\"\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :type=\"type\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @keyup.enter=\"enterSubmit&amp;&amp;submit()\" _v-652ad7b9=\"\">\n    </template>\n    <span v-if=\"clearButton &amp;&amp; value\" class=\"close\" @click=\"value = ''\" _v-652ad7b9=\"\">×</span>\n    <span v-if=\"icon&amp;&amp;valid!==null\" class=\"glyphicon glyphicon-{{valid?'ok':'remove'}} form-control-feedback\" aria-hidden=\"true\" _v-652ad7b9=\"\"></span>\n    <div v-if=\"showHelp\" class=\"help-block\" _v-652ad7b9=\"\">{{help}}</div>\n    <div v-if=\"showError\" class=\"help-block with-errors\" _v-652ad7b9=\"\">{{errorText}}</div>\n  </div>";
+		module.exports = "<div class=\"form-group\" @click=\"focus()\" :class=\"{'has-feedback':icon,'has-error':valid===false,'has-success':valid===true}\" _v-652ad7b9=\"\">\n    <label v-if=\"label\" class=\"control-label\" _v-652ad7b9=\"\">{{label}}</label>\n    <textarea v-if=\"type=='textarea'\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :cols=\"cols\" :rows=\"rows\" :name=\"name\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" _v-652ad7b9=\"\"></textarea>\n    <template v-else=\"\" _v-652ad7b9=\"\">\n      <div v-if=\"slots.before||slots.after\" class=\"input-group\" _v-652ad7b9=\"\">\n        <slot name=\"before\" _v-652ad7b9=\"\"></slot>\n        <input class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :type=\"type\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" _v-652ad7b9=\"\">\n        <slot name=\"after\" _v-652ad7b9=\"\"></slot>\n      </div>\n      <input v-else=\"\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :type=\"type\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" _v-652ad7b9=\"\">\n    </template>\n    <button v-if=\"clearButton &amp;&amp; value\" type=\"button\" class=\"close\" @click=\"value = ''\" _v-652ad7b9=\"\">\n      <span _v-652ad7b9=\"\">×</span>\n    </button>\n    <span v-if=\"icon&amp;&amp;valid!==null\" class=\"glyphicon glyphicon-{{valid?'ok':'remove'}} form-control-feedback\" aria-hidden=\"true\" _v-652ad7b9=\"\"></span>\n    <div v-if=\"showHelp\" class=\"help-block\" _v-652ad7b9=\"\">{{help}}</div>\n    <div v-if=\"showError\" class=\"help-block with-errors\" _v-652ad7b9=\"\">{{errorText}}</div>\n  </div>";
 
 	/***/ },
 	/* 144 */
@@ -30003,13 +29989,7 @@
 		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 		
 		exports.default = {
-		  mixins: [_popoverMixins2.default],
-		  props: {
-		    trigger: {
-		      type: String,
-		      default: 'click'
-		    }
-		  }
+		  mixins: [_popoverMixins2.default]
 		};
 		// </script>
 		
@@ -30081,31 +30061,53 @@
 		
 		//   <span v-el:trigger>
 		
-		//     <slot></slot>
+		//     <slot>
+		
+		//     </slot>
 		
 		//   </span>
 		
-		//   <div v-el:popover v-show="show"
+		//   <div class="popover"
 		
-		//     :class="['popover',placement]"
+		//     v-bind:class="{
 		
-		//     :transition="effect"
+		//     'top':placement === 'top',
 		
-		//   >
+		//     'left':placement === 'left',
 		
-		//     <div class="arrow"></div>
+		//     'right':placement === 'right',
 		
-		//     <h3 class="popover-title" v-if="title">
+		//     'bottom':placement === 'bottom'
 		
-		//       <slot name="title">{{title}}</slot>
+		//     }"
 		
-		//     </h3>
+		//     v-el:popover
 		
-		//     <div class="popover-content">
+		//     v-show="show"
 		
-		//       <slot name="content">{{{content}}}</slot>
+		//     :transition="effect">
 		
-		//     </div>
+		//       <div class="arrow"></div>
+		
+		//       <h3 class="popover-title" v-show="title">
+		
+		//           <slot name="title">
+		
+		//             {{title}}
+		
+		//           </slot>
+		
+		//       </h3>
+		
+		//       <div class="popover-content">
+		
+		//         <slot name="content">
+		
+		//             {{{content}}}
+		
+		//         </slot>
+		
+		//       </div>
 		
 		//   </div>
 		
@@ -30137,7 +30139,8 @@
 		exports.default = {
 		  props: {
 		    trigger: {
-		      type: String
+		      type: String,
+		      default: 'click'
 		    },
 		    effect: {
 		      type: String,
@@ -30176,25 +30179,30 @@
 		  ready: function ready() {
 		    var _this = this;
 		
+		    if (!this.$els.popover) return console.error('Couldn\'t find popover v-el in your component that uses popoverMixin.');
+		    var triger = this.$els.trigger.children[0];
+		    var events = this.trigger === 'hover' ? ['mouseleave', 'mouseenter'] : this.trigger === 'focus' ? ['blur', 'focus'] : ['click'];
+		    (0, _NodeList2.default)(triger).on(events, function () {
+		      return _this.toggle(events[1]);
+		    });
+		
 		    var popover = this.$els.popover;
-		    if (!popover) return console.error('Could not find popover v-el in your component that uses popoverMixin.');
-		    var trigger = this.$els.trigger.children[0];
 		    switch (this.placement) {
 		      case 'top':
-		        this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2;
-		        this.position.top = trigger.offsetTop - popover.offsetHeight;
+		        this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2;
+		        this.position.top = triger.offsetTop - popover.offsetHeight;
 		        break;
 		      case 'left':
-		        this.position.left = trigger.offsetLeft - popover.offsetWidth;
-		        this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2;
+		        this.position.left = triger.offsetLeft - popover.offsetWidth;
+		        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2;
 		        break;
 		      case 'right':
-		        this.position.left = trigger.offsetLeft + trigger.offsetWidth;
-		        this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2;
+		        this.position.left = triger.offsetLeft + triger.offsetWidth;
+		        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2;
 		        break;
 		      case 'bottom':
-		        this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2;
-		        this.position.top = trigger.offsetTop + trigger.offsetHeight;
+		        this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2;
+		        this.position.top = triger.offsetTop + triger.offsetHeight;
 		        break;
 		      default:
 		        console.warn('Wrong placement prop');
@@ -30203,14 +30211,9 @@
 		    popover.style.left = this.position.left + 'px';
 		    popover.style.display = 'none';
 		    this.show = !this.show;
-		
-		    var events = this.trigger === 'contextmenu' ? 'contextmenu' : this.trigger === 'hover' ? ['mouseleave', 'mouseenter'] : this.trigger === 'focus' ? ['blur', 'focus'] : ['click'];
-		    (0, _NodeList2.default)(trigger).on(events, function () {
-		      return _this.toggle();
-		    });
 		  },
 		  beforeDestroy: function beforeDestroy() {
-		    (0, _NodeList2.default)(this.$els.trigger.children[0]).off();
+		    (0, _NodeList2.default)(triger).off();
 		  }
 		};
 
@@ -30218,7 +30221,7 @@
 	/* 171 */
 	/***/ function(module, exports) {
 
-		module.exports = "<span v-el:trigger>\r\n    <slot></slot>\r\n  </span>\r\n  <div v-el:popover v-show=\"show\"\r\n    :class=\"['popover',placement]\"\r\n    :transition=\"effect\"\r\n  >\r\n    <div class=\"arrow\"></div>\r\n    <h3 class=\"popover-title\" v-if=\"title\">\r\n      <slot name=\"title\">{{title}}</slot>\r\n    </h3>\r\n    <div class=\"popover-content\">\r\n      <slot name=\"content\">{{{content}}}</slot>\r\n    </div>\r\n  </div>";
+		module.exports = "<span v-el:trigger>\r\n    <slot>\r\n    </slot>\r\n  </span>\r\n  <div class=\"popover\"\r\n    v-bind:class=\"{\r\n    'top':placement === 'top',\r\n    'left':placement === 'left',\r\n    'right':placement === 'right',\r\n    'bottom':placement === 'bottom'\r\n    }\"\r\n    v-el:popover\r\n    v-show=\"show\"\r\n    :transition=\"effect\">\r\n      <div class=\"arrow\"></div>\r\n      <h3 class=\"popover-title\" v-show=\"title\">\r\n          <slot name=\"title\">\r\n            {{title}}\r\n          </slot>\r\n      </h3>\r\n      <div class=\"popover-content\">\r\n        <slot name=\"content\">\r\n            {{{content}}}\r\n        </slot>\r\n      </div>\r\n  </div>";
 
 	/***/ },
 	/* 172 */
@@ -30796,7 +30799,7 @@
 		
 		//       <option v-if="required" value=""></option>
 		
-		//       <option v-for="option in options" :value="option.value||option">{{ option.label||option }}</option>
+		//       <option v-for="option in options" :value="option.value||option" :selected="isSelected(option.value||option)">{{ option.label||option }}</option>
 		
 		//     </select>
 		
@@ -30966,6 +30969,7 @@
 		  },
 		  data: function data() {
 		    return {
+		      focus: null,
 		      loading: null,
 		      searchValue: null,
 		      show: false,
@@ -31019,7 +31023,7 @@
 		      return foundItems.join(', ');
 		    },
 		    canSearch: function canSearch() {
-		      return this.minSearch ? this.options.length >= this.minSearch : this.search;
+		      return !this.minSearch ? this.search : this.options.length >= this.minSearch;
 		    },
 		    limitText: function limitText() {
 		      return this.text.limit.replace('{{limit}}', this.limit);
@@ -31064,9 +31068,9 @@
 		      this.checkValue();
 		    },
 		    show: function show(val) {
-		      if (val) {
-		        this.$els.sel.focus();
-		        this.$els.search && this.$els.search.focus();
+		      if (this.focus) {
+		        (this.$els.search || this.$els.sel).focus();
+		        this.focus = false;
 		      }
 		    },
 		    url: function url() {
@@ -31118,9 +31122,11 @@
 		      return this.values.indexOf(v) > -1;
 		    },
 		    toggle: function toggle() {
+		      this.focus = true;
 		      this.show = !this.show;
 		    },
 		    blur: function blur() {
+		      this.focus = true;
 		      this.show = false;
 		    },
 		    update: function update() {
@@ -31165,7 +31171,9 @@
 		      });
 		    }
 		  },
-		  created: function created() {
+		  ready: function ready() {
+		    var _this3 = this;
+		
 		    if (this.value === undefined || !this.parent) {
 		      this.value = null;
 		    }
@@ -31174,10 +31182,6 @@
 		    }
 		    this.checkValue();
 		    if (this.url) this.update();
-		  },
-		  ready: function ready() {
-		    var _this3 = this;
-		
 		    (0, _NodeList2.default)(this.$els.select).onBlur(function (e) {
 		      _this3.show = false;
 		    });
@@ -31924,7 +31928,7 @@
 	/* 200 */
 	/***/ function(module, exports) {
 
-		module.exports = "<div v-el:select=\"\" :class=\"{'btn-group btn-group-justified': justified, 'btn-select': !justified}\" _v-e514dbc6=\"\">\n  <slot name=\"before\" _v-e514dbc6=\"\"></slot>\n  <div :class=\"{open:show,dropdown:!justified}\" _v-e514dbc6=\"\">\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-e514dbc6=\"\">\n      <option v-if=\"required\" value=\"\" _v-e514dbc6=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option.value||option\" _v-e514dbc6=\"\">{{ option.label||option }}</option>\n    </select>\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-e514dbc6=\"\">\n      <span class=\"btn-content\" _v-e514dbc6=\"\">{{ loading ? text.loading : showPlaceholder || selectedItems }}</span>\n      <span class=\"caret\" _v-e514dbc6=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-e514dbc6=\"\">×</span>\n    </button>\n    <ul class=\"dropdown-menu\" _v-e514dbc6=\"\">\n      <template v-if=\"options.length\" _v-e514dbc6=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-e514dbc6=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-e514dbc6=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-e514dbc6=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-e514dbc6=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-e514dbc6=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option.value||option\" _v-e514dbc6=\"\">\n          <a @mousedown.prevent=\"select(option.value||option)\" _v-e514dbc6=\"\">\n            {{ option.label||option }}\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option.value||option)\" _v-e514dbc6=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot v-else=\"\" _v-e514dbc6=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify\" transition=\"fadein\" _v-e514dbc6=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify\" transition=\"fadein\" _v-e514dbc6=\"\"><div _v-e514dbc6=\"\">{{limitText}}</div></div>\n  </div>\n  <slot name=\"after\" _v-e514dbc6=\"\"></slot>\n</div>";
+		module.exports = "<div v-el:select=\"\" :class=\"{'btn-group btn-group-justified': justified, 'btn-select': !justified}\" _v-e514dbc6=\"\">\n  <slot name=\"before\" _v-e514dbc6=\"\"></slot>\n  <div :class=\"{open:show,dropdown:!justified}\" _v-e514dbc6=\"\">\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-e514dbc6=\"\">\n      <option v-if=\"required\" value=\"\" _v-e514dbc6=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option.value||option\" :selected=\"isSelected(option.value||option)\" _v-e514dbc6=\"\">{{ option.label||option }}</option>\n    </select>\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-e514dbc6=\"\">\n      <span class=\"btn-content\" _v-e514dbc6=\"\">{{ loading ? text.loading : showPlaceholder || selectedItems }}</span>\n      <span class=\"caret\" _v-e514dbc6=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-e514dbc6=\"\">×</span>\n    </button>\n    <ul class=\"dropdown-menu\" _v-e514dbc6=\"\">\n      <template v-if=\"options.length\" _v-e514dbc6=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-e514dbc6=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-e514dbc6=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-e514dbc6=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-e514dbc6=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-e514dbc6=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option.value||option\" _v-e514dbc6=\"\">\n          <a @mousedown.prevent=\"select(option.value||option)\" _v-e514dbc6=\"\">\n            {{ option.label||option }}\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option.value||option)\" _v-e514dbc6=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot v-else=\"\" _v-e514dbc6=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify\" transition=\"fadein\" _v-e514dbc6=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify\" transition=\"fadein\" _v-e514dbc6=\"\"><div _v-e514dbc6=\"\">{{limitText}}</div></div>\n  </div>\n  <slot name=\"after\" _v-e514dbc6=\"\"></slot>\n</div>";
 
 	/***/ },
 	/* 201 */
@@ -32728,7 +32732,7 @@
 		
 		
 		// module
-		exports.push([module.id, ".tooltip {\r\n  opacity: .9\r\n}\r\n.fadein-enter {\r\n  -webkit-animation:fadein-in 0.3s ease-in;\r\n          animation:fadein-in 0.3s ease-in;\r\n}\r\n.fadein-leave {\r\n  -webkit-animation:fadein-out 0.3s ease-out;\r\n          animation:fadein-out 0.3s ease-out;\r\n}\r\n@-webkit-keyframes fadein-in {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    opacity: .9;\r\n  }\r\n}\r\n@keyframes fadein-in {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    opacity: .9;\r\n  }\r\n}\r\n@-webkit-keyframes fadein-out {\r\n  0% {\r\n    opacity: .9;\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}\r\n@keyframes fadein-out {\r\n  0% {\r\n    opacity: .9;\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}", ""]);
+		exports.push([module.id, ".tooltip {\r\n  opacity: .9\r\n}\r\n.fadein-enter {\r\n  -webkit-animation:fadein-in 0.3s ease-in;\r\n          animation:fadein-in 0.3s ease-in;\r\n}\r\n.fadein-leave {\r\n  -webkit-animation:fadein-out 0.3s ease-out;\r\n          animation:fadein-out 0.3s ease-out;\r\n}\r\n@-webkit-keyframes fadein-in {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    opacity: 1;\r\n  }\r\n}\r\n@keyframes fadein-in {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    opacity: 1;\r\n  }\r\n}\r\n@-webkit-keyframes fadein-out {\r\n  0% {\r\n    opacity: 1;\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}\r\n@keyframes fadein-out {\r\n  0% {\r\n    opacity: 1;\r\n  }\r\n  100% {\r\n    opacity: 0;\r\n  }\r\n}", ""]);
 		
 		// exports
 
@@ -32795,7 +32799,7 @@
 		
 		//   100% {
 		
-		//     opacity: .9;
+		//     opacity: 1;
 		
 		//   }
 		
@@ -32805,7 +32809,7 @@
 		
 		//   0% {
 		
-		//     opacity: .9;
+		//     opacity: 1;
 		
 		//   }
 		
@@ -32822,23 +32826,43 @@
 		
 		//   <span v-el:trigger>
 		
-		//     <slot></slot>
+		//     <slot>
+		
+		//     </slot>
 		
 		//   </span>
 		
-		//   <div v-el:popover v-show="show" role="tooltip"
+		//   <div class="tooltip"
 		
-		//     :class="['tooltip',placement]"
+		//     v-bind:class="{
+		
+		//     'top':    placement === 'top',
+		
+		//     'left':   placement === 'left',
+		
+		//     'right':  placement === 'right',
+		
+		//     'bottom': placement === 'bottom'
+		
+		//     }"
+		
+		//     v-el:popover
+		
+		//     v-show="show"
 		
 		//     :transition="effect"
 		
-		//   >
+		//     role="tooltip">
 		
 		//     <div class="tooltip-arrow"></div>
 		
 		//     <div class="tooltip-inner">
 		
-		//       <slot name="content">{{{content}}}</slot>
+		//        <slot name="content">
+		
+		//         {{{content}}}
+		
+		//       </slot>
 		
 		//    </div>
 		
@@ -32853,7 +32877,7 @@
 	/* 226 */
 	/***/ function(module, exports) {
 
-		module.exports = "<span v-el:trigger>\r\n    <slot></slot>\r\n  </span>\r\n  <div v-el:popover v-show=\"show\" role=\"tooltip\"\r\n    :class=\"['tooltip',placement]\"\r\n    :transition=\"effect\"\r\n  >\r\n    <div class=\"tooltip-arrow\"></div>\r\n    <div class=\"tooltip-inner\">\r\n      <slot name=\"content\">{{{content}}}</slot>\r\n   </div>\r\n  </div>";
+		module.exports = "<span v-el:trigger>\r\n    <slot>\r\n    </slot>\r\n  </span>\r\n  <div class=\"tooltip\"\r\n    v-bind:class=\"{\r\n    'top':    placement === 'top',\r\n    'left':   placement === 'left',\r\n    'right':  placement === 'right',\r\n    'bottom': placement === 'bottom'\r\n    }\"\r\n    v-el:popover\r\n    v-show=\"show\"\r\n    :transition=\"effect\"\r\n    role=\"tooltip\">\r\n    <div class=\"tooltip-arrow\"></div>\r\n    <div class=\"tooltip-inner\">\r\n       <slot name=\"content\">\r\n        {{{content}}}\r\n      </slot>\r\n   </div>\r\n  </div>";
 
 	/***/ },
 	/* 227 */
