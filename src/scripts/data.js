@@ -38,7 +38,7 @@ var pageData = {
             },
             "middle":{
               "isPpt":'ppt',
-              "srcPpt":"http://slides.com/maddog-ppt/deck-2/fullscreen"
+              "srcPpt":"https://slides.com/maddog-ppt/deck-2/fullscreen"
             }
         }],
         [{
