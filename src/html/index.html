@@ -55,7 +55,7 @@
                     </div>
                     <div class="body-content">
                         <div class="middle middle">
-                            <div v-if="!!backImg.middle" class="middleClass middle">
+                            <div v-if="!!backImg.middle" v-cloak class="middleClass middle">
                                 <video v-if="backImg.middle.isVideo==='video'" id="example_video1" class="video-js vjs-default-skin vjs-big-play-centered videoClass" controls width="800" height="450" v-bind:poster="backImg.middle.picVideo">
                                  <source v-bind:src="backImg.middle.srcVideo" type='video/mp4'/>
                                 </video>

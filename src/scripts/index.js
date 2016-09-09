@@ -51,6 +51,28 @@ var begin = {
         for (var i = 1;i<len;i++) {
             vueVm.$children[i].isAnimating = true;
         }
+        var player = $jq('#example_video1').length;
+        if (player) {
+          videoPlay = videojs("example_video1", {
+              autoplay:false,
+              controlBar: {
+                  captionsButton: false,
+                  chaptersButton : false,
+                  liveDisplay:false,
+                  subtitlesButton:false,
+                  volumeMenuButton:true
+            }
+          }).ready(function(){
+
+            var myPlayer = this;
+
+              myPlayer.on('error',function (e) {
+                myPlayer.error(null);
+                myPlayer.reset();
+              });
+
+          });
+        }
     },
     slide: function (index) {
         var len = vueVm.titleList.length+1;
@@ -85,24 +107,4 @@ var fsvs = $jq.fn.fsvs({
     });
 $jq(document).ready( function() {
     begin.init();
-    videoPlay = videojs("example_video1", {
-        autoplay:false,
-        controlBar: {
-            captionsButton: false,
-            chaptersButton : false,
-            liveDisplay:false,
-            subtitlesButton:false,
-            volumeMenuButton:true
-      }
-    }).ready(function(){
-
-      var myPlayer = this;
-      // myPlayer.play();
-
-        myPlayer.on('error',function (e) {
-          myPlayer.error(null);
-          myPlayer.reset();
-        });
-
-    });
 });
