@@ -47,7 +47,8 @@
                     </div>
                     <div v-if="!!backImg.right" class="floatLocate" v-bind:style="backImg.right.locate">
                         <p v-if="isChinese">
-                          {{backImg.right.characte}}
+                              {{backImg.right.characte}}
+                                <img v-if="backImg.right.img" v-bind:src="backImg.right.srcImg" alt="" />
                         </p>
                         <p v-else>
                           {{backImg.right.characteEnglish}}

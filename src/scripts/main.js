@@ -59,6 +59,29 @@
 	var videojs = __webpack_require__(83);
 	var HEIGHT = window.screen.height-80;
 	var videoPlay;
+	var cookie_val = getCookie("isChinese") || "chinese";
+	document.cookie="isChinese="+ cookie_val;
+	function getCookie(cookie_name){
+	    var allcookies = document.cookie;
+
+	    var cookie_pos = allcookies.indexOf(cookie_name);   //索引的长度  ,开始索引的位置
+
+	    // 如果找到了索引，就代表cookie存在,反之，就说明不存在。
+	    if (cookie_pos != -1){
+
+	        // 把cookie_pos放在值的开始，只要给值加1即可。
+	        cookie_pos = cookie_pos+cookie_name.length + 1; //计算取cookie值得开始索引，加的1为“=”
+	        var cookie_end = allcookies.indexOf(";", cookie_pos);  //计算取cookie值得结束索引
+
+	        if (cookie_end == -1){
+	            cookie_end = allcookies.length;
+
+	        }
+	        var value = unescape(allcookies.substring(cookie_pos, cookie_end)); //这里就可以得到你想要的cookie的值了。\
+	        //alert(values);
+	    }
+	    return value;
+	}
 	var vueVm = new Vue({
 	    el: '#content',
 	    components: {
@@ -66,7 +89,7 @@
 	        'slider':slider
 	    },
 	    data:{
-	        isChinese: true,
+	        isChinese: cookie_val==='chinese'?true:false,
 	        interval:1000,
 	        currentPage:0,
 	        currentHeight:HEIGHT,
@@ -80,6 +103,7 @@
 	            fsvs.slideToIndex(this.currentPage);
 	        },
 	        changeLanguage: function (value){
+	          document.cookie="isChinese="+ (value ? 'chinese':'english');
 	          this.isChinese = value;
 	        }
 	    },
@@ -96,6 +120,28 @@
 	            vueVm.$children[0].isAnimating = false;
 	        for (var i = 1;i<len;i++) {
 	            vueVm.$children[i].isAnimating = true;
+	        }
+	        var player = $jq('#example_video1').length;
+	        if (player) {
+	          videoPlay = videojs("example_video1", {
+	              autoplay:false,
+	              controlBar: {
+	                  captionsButton: false,
+	                  chaptersButton : false,
+	                  liveDisplay:false,
+	                  subtitlesButton:false,
+	                  volumeMenuButton:true
+	            }
+	          }).ready(function(){
+
+	            var myPlayer = this;
+
+	              myPlayer.on('error',function (e) {
+	                myPlayer.error(null);
+	                myPlayer.reset();
+	              });
+
+	          });
 	        }
 	    },
 	    slide: function (index) {
@@ -131,26 +177,6 @@
 	    });
 	$jq(document).ready( function() {
 	    begin.init();
-	    videoPlay = videojs("example_video1", {
-	        autoplay:false,
-	        controlBar: {
-	            captionsButton: false,
-	            chaptersButton : false,
-	            liveDisplay:false,
-	            subtitlesButton:false,
-	            volumeMenuButton:true
-	      }
-	    }).ready(function(){
-
-	      var myPlayer = this;
-	      // myPlayer.play();
-
-	        myPlayer.on('error',function (e) {
-	          myPlayer.error(null);
-	          myPlayer.reset();
-	        });
-
-	    });
 	});
 
 
@@ -2002,7 +2028,9 @@
 	                "-ms-interpolation-mode": "bicubic"
 	            },
 	            "right":{
-	              "characte":"不要怂，就是干",
+	              "img":true,
+	              "srcImg":"/html/slogan.png",
+	              "characte":"",
 	              "characteEnglish":"Do not afraid,    Let's do it",
 	              "locate":{
 	                "font-size":"35pt",
@@ -2013,11 +2041,11 @@
 	                'color':'#D2E9FF'
 	                        }
 	              }
-	          /*  "middle":{
-	                "isVideo":'video',
-	                "picVideo": 'http://maddog-static.oss-cn-qingdao.aliyuncs.com/videoImg.jpeg',
-	                "srcVideo":"../video/test1.mp4"
-	            }*/
+	           //"middle":{
+	                // "isVideo":'video',
+	                // "picVideo": 'http://maddog-static.oss-cn-qingdao.aliyuncs.com/videoImg.jpeg',
+	                // "srcVideo":"../video/test1.mp4"
+	          //  }
 	        },{
 	            "styleObject":{
 	                height:HEIGHT+'px',
