@@ -5,7 +5,7 @@ var pageData = {
             "styleObject":{
                 "height":HEIGHT+'px',
                 "width":'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-Slogan.JPG')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-Slogan.JPG')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -18,8 +18,8 @@ var pageData = {
                 "font-style":"italic",
                 "width": "600px",
                 "top":"45%",
-                "right":"30%",
-                'color':'#D2E9FF'
+                "right":"25%",
+                'color':'#FFFFFF'
                         }
               }
           /*  "middle":{
@@ -31,7 +31,7 @@ var pageData = {
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-activity.JPG')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Home-activity.JPG')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -45,7 +45,26 @@ var pageData = {
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-Embedded-Development.JPG')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/PCB%E5%A4%87%E7%94%A8%E8%83%8C%E6%99%AF.jpg')",
+                "background-size":"cover",
+                "min-width": "40%",
+                "-ms-interpolation-mode": "bicubic"
+            },
+            "left":{
+              "characte":"嵌入式开发是MadDog工作室的优势。我们致力于技术，客户服务，打造最适合您需求的产品。",
+              "characteEnglish":"Embedded development is a major foothold of Mad Dog Studios. We are committed to technology, customer service, to create a product that best suits your needs.",
+              "locate":{
+                "width": "500px",
+                "top":"35%",
+                "left":"40%",
+                'color':'#000000'
+              }
+            }
+        },{
+            "styleObject":{
+                height:HEIGHT+'px',
+                width:'100%',
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-Embedded-Development.JPG')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -67,11 +86,11 @@ var pageData = {
                   'color':"#ffffff"
               }
             }
-        },{
+        },/*{
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-Product-Design.jpg')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/PCB%E5%A4%87%E7%94%A8%E8%83%8C%E6%99%AF.jpg')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -81,16 +100,16 @@ var pageData = {
               "characteEnglish":"Embedded development is a major foothold of Mad Dog Studios. We are committed to technology, customer service, to create a product that best suits your needs.",
               "locate":{
                 "width": "500px",
-                "top":"28%",
-                "left":"62%",
+                "top":"35%",
+                "left":"40%",
                 'color':'#000000'
               }
             }
-        },{
+        },*/{
             "styleObject":{
                 "height":HEIGHT+'px',
                 "width":'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-RF-Design.jpg')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Services-RF-Design.jpg')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -100,7 +119,7 @@ var pageData = {
               "characte":"RF设计是我们的优势之一，我们在开发设计过程中按照他们的需求来完成产品的设计。",
               "locate":{
                 "width": "50%",
-                "top":"55%",
+                "top":"60%",
                 "right":"15%"
               }
             }
@@ -109,7 +128,7 @@ var pageData = {
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-HVAC.JPG')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-HVAC.JPG')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -127,7 +146,7 @@ var pageData = {
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-Blood-glucose.jpg')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-Blood-glucose.jpg')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -147,7 +166,7 @@ var pageData = {
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-More-to-Be-Continued.jpg')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Product-More-to-Be-Continued.jpg')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "-ms-interpolation-mode": "bicubic"
@@ -157,7 +176,7 @@ var pageData = {
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/Support.JPG')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/Support.JPG')",
                 "background-size":"100% 100%",
                 "-ms-interpolation-mode": "bicubic"
             },
@@ -188,7 +207,7 @@ var pageData = {
             "styleObject":{
                 height:HEIGHT+'px',
                 width:'100%',
-                "background-image": "url('http://maddog-static.oss-cn-qingdao.aliyuncs.com/About.jpg')",
+                "background-image": "url('https://maddog-static.oss-cn-qingdao.aliyuncs.com/About.jpg')",
                 "background-size":"cover",
                 "min-width": "40%",
                 "min-width": "1000px",
