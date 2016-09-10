@@ -56,6 +56,7 @@ var pageData = {
               "characte":"嵌入式开发是MadDog工作室的优势。我们致力于技术，客户服务，打造最适合您需求的产品。",
               "characteEnglish":"Embedded development is a major foothold of Mad Dog Studios. We are committed to technology, customer service, to create a product that best suits your needs.",
               "locate":{
+                "background-color":"rgba(0,0,0,0.05)",
                 "width": "500px",
                 "top":"35%",
                 "left":"40%",
@@ -76,6 +77,7 @@ var pageData = {
               "characte":"我们提供嵌入式软硬件设计，快速原型设计，工业控制系统应用设计等服务，在每一步设计中都带着新的想法去超越。",
               "characteEnglish":"We offer rapid proto-typing and proto-type testing for all applications and Software development for embedded industrial control systems and applications With long experience in designing we  assist our customers in product design right from the start, bringing fresh ideas to every step in the design process and beyond, all the way towards manufacturing.",
               "middle":{
+                  "background-color":"rgba(0,0,0,0.05)",
                   "text-align":"justify",
                   "font-size":"20pt",
                   "font-size":"italic",
@@ -120,6 +122,7 @@ var pageData = {
               "characteEnglish":"  RF design is one of our strengths when it comes to making durable and reliable test environment for laboratories and manufacturing centers. We assist customers following their requirements while developing ways to achieving their goals in the design.",
               "characte":"RF设计是我们的优势之一，我们在开发设计过程中按照他们的需求来完成产品的设计。",
               "locate":{
+                "background-color":"rgba(0,0,0,0.05)",
                 "width": "50%",
                 "top":"60%",
                 "right":"15%"
@@ -157,10 +160,12 @@ var pageData = {
               "characte":"我们设计的血糖仪可以直接上传测得的血糖含量到Web服务器，可以让医生及时了解糖尿病患者的情况，并给出相关的治疗建议。",
               "characteEnglish":"We are involved in the blood glucose meter can directly upload the measured blood glucose content to the web server, can let the doctor in time to understand the situation of diabetic patients and give relevant treatment recommendations.",
               "locate":{
+                "background-color":"rgba(0,0,0,0.1)",
                 "width": "420px",
                 "top":"200px",
                 "right":"18%",
                 "margin-left":"-210px"
+
               }
             }
         },
@@ -186,6 +191,7 @@ var pageData = {
               "isFont":'font',
               "characte":"我们有经验丰富的售后服务人员，确保您可以在第一时间获得支持，我们有能力提供现场支持，返厂维修和在线服务，确保您获得高质量服务。",
               "middle":{
+                  "background-color":"rgba(0,0,0,0.05)",
                   "width":"700px",
                   "text-align":'left',
                   "margin-left": "400px",
