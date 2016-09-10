@@ -11,7 +11,9 @@ var pageData = {
                 "-ms-interpolation-mode": "bicubic"
             },
             "right":{
-              "characte":"不要怂，就是干",
+              "img":true,
+              "srcImg":"/html/slogan.png",
+              "characte":"",
               "characteEnglish":"Do not afraid,    Let's do it",
               "locate":{
                 "font-size":"35pt",
@@ -22,11 +24,11 @@ var pageData = {
                 'color':'#FFFFFF'
                         }
               }
-          /*  "middle":{
-                "isVideo":'video',
-                "picVideo": 'http://maddog-static.oss-cn-qingdao.aliyuncs.com/videoImg.jpeg',
-                "srcVideo":"../video/test1.mp4"
-            }*/
+           //"middle":{
+                // "isVideo":'video',
+                // "picVideo": 'http://maddog-static.oss-cn-qingdao.aliyuncs.com/videoImg.jpeg',
+                // "srcVideo":"../video/test1.mp4"
+          //  }
         },{
             "styleObject":{
                 height:HEIGHT+'px',
