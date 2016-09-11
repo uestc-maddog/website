@@ -2073,6 +2073,7 @@
 	              "characteEnglish":"Embedded development is a major foothold of Mad Dog Studios. We are committed to technology, customer service, to create a product that best suits your needs.",
 	              "locate":{
 	                "background-color":"rgba(0,0,0,0.05)",
+	                "padding":"5px",
 	                "width": "500px",
 	                "top":"35%",
 	                "left":"40%",
@@ -2095,6 +2096,7 @@
 	              "middle":{
 	                  "background-color":"rgba(0,0,0,0.05)",
 	                  "text-align":"justify",
+	                  "padding":"5px",
 	                  "font-size":"20pt",
 	                  "font-size":"italic",
 	                  "position":"absolute",
@@ -2140,6 +2142,7 @@
 	              "locate":{
 	                "background-color":"rgba(0,0,0,0.05)",
 	                "width": "50%",
+	                "padding":"5px",
 	                "top":"60%",
 	                "right":"15%"
 	              }
@@ -2178,6 +2181,7 @@
 	              "locate":{
 	                "background-color":"rgba(0,0,0,0.1)",
 	                "width": "420px",
+	                "padding":"5px",
 	                "top":"200px",
 	                "right":"18%",
 	                "margin-left":"-210px"
@@ -2209,6 +2213,7 @@
 	              "middle":{
 	                  "background-color":"rgba(0,0,0,0.05)",
 	                  "width":"700px",
+	                  "padding":"5px",
 	                  "text-align":'left',
 	                  "margin-left": "400px",
 	                  'color':'#ffffff'
