@@ -26,7 +26,7 @@
           height: 40px;
           background-position: 0 0;
           background-repeat: no-repeat;
-          background-image: url(http://maddog-static.oss-cn-qingdao.aliyuncs.com/logo.png); }
+          background-image: url(https://maddog-static.oss-cn-qingdao.aliyuncs.com/logo.png); }
         .header .am-header-inner .mainNav .laymid .mainMenu {
           height: 80px;
           margin-left: 360px; }
@@ -54,7 +54,7 @@
 .body {
   font-size: 18pt; }
   .body .carousel-indicators {
-    bottom: 5%; }
+    bottom: 10%; }
   .body .services {
     width: 100%;
     min-height: 480px;
@@ -89,8 +89,18 @@
           width: 800px;
           height: 450px; }
     .body .body-content .bottomClass {
-      padding: 0 20%;
+      padding: 0 30%;
       text-align: center; }
+
+.gotoNext {
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -35px;
+  cursor: pointer; }
 
 body {
   font-family: Tahoma, Helvetica, Arial, STXihei, "\534E\6587\7EC6\9ED1", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", sans-serif !important; }

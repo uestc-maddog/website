@@ -17,22 +17,16 @@ var cookie_val = getCookie("isChinese") || "chinese";
 document.cookie="isChinese="+ cookie_val;
 function getCookie(cookie_name){
     var allcookies = document.cookie;
-
     var cookie_pos = allcookies.indexOf(cookie_name);   //索引的长度  ,开始索引的位置
-
     // 如果找到了索引，就代表cookie存在,反之，就说明不存在。
     if (cookie_pos != -1){
-
         // 把cookie_pos放在值的开始，只要给值加1即可。
         cookie_pos = cookie_pos+cookie_name.length + 1; //计算取cookie值得开始索引，加的1为“=”
         var cookie_end = allcookies.indexOf(";", cookie_pos);  //计算取cookie值得结束索引
-
         if (cookie_end == -1){
             cookie_end = allcookies.length;
-
         }
         var value = unescape(allcookies.substring(cookie_pos, cookie_end)); //这里就可以得到你想要的cookie的值了。\
-        //alert(values);
     }
     return value;
 }
@@ -59,12 +53,17 @@ var vueVm = new Vue({
         changeLanguage: function (value){
           document.cookie="isChinese="+ (value ? 'chinese':'english');
           this.isChinese = value;
+        },
+        nextPage: function () {
+          this.currentPage = this.currentPage+1;
+          fsvs.slideToIndex(this.currentPage);
         }
     },
     compiled: function(){
       // $jq("#defaultData").empty().hide();
     }
 });
+window.history.pushState('','','/');
 var begin = {
     init: function (){
         this.first();

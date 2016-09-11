@@ -12,15 +12,15 @@ var pageData = {
             },
             "right":{
               "img":true,
-              "srcImg":"/html/slogan.png",
+              "srcImg":"https://maddog-static.oss-cn-qingdao.aliyuncs.com/slogan.png",
               "characte":"",
               "characteEnglish":"Do not afraid,    Let's do it",
               "locate":{
                 "font-size":"35pt",
                 "font-style":"italic",
                 "width": "600px",
-                "top":"45%",
-                "right":"25%",
+                "top":"51%",
+                "right":"11%",
                 'color':'#FFFFFF'
                         }
               }
