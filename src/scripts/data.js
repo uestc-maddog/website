@@ -19,8 +19,8 @@ var pageData = {
                 "font-size":"35pt",
                 "font-style":"italic",
                 "width": "600px",
-                "top":"51%",
-                "right":"11%",
+                "top":"50%",
+                "right":"25%",
                 'color':'#FFFFFF'
                         }
               }
